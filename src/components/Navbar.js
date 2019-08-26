@@ -1,0 +1,39 @@
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+export default class Navbar extends Component {
+    state = {
+        isOpen: false
+    }
+    
+    handleToggle = () => {
+        this.setState({isOpen : !this.state.isOpen})
+        console.log(this.state.isOpen)
+    }
+
+    render() {
+        return (
+            <>
+            <nav>
+                <div className="container">
+
+                    <div onClick={this.handleToggle} className={this.state.isOpen ? "menu-bars cancel" : "menu-bars"} id="nav-button">
+                        <div className="bar1"></div>
+                        <div className="bar2"></div>
+                        <div className="bar3"></div>
+                    </div>
+
+                    <div className="menu-icon">LOGO</div>
+                    <div className="menu">
+                        <ul id="nav-ul" className={this.state.isOpen ? "nav-mobile" : ""}>
+                            <Link to="/"><li>Home</li></Link>
+                            <Link to="/Rooms"><li>Rooms</li></Link>
+                            <Link to="/About"><li>About</li></Link>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div className="nav-fix"></div>
+            </>
+        )
+    }
+}

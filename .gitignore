@@ -10,7 +10,8 @@
 
 # production
 /build
-
+.env
+/firebase_deploy
 # misc
 .DS_Store
 .env.local
