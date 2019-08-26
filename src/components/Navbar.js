@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import logo from '../images/logo.png';
+
 export default class Navbar extends Component {
     state = {
         isOpen: false
@@ -22,7 +24,8 @@ export default class Navbar extends Component {
                         <div className="bar3"></div>
                     </div>
 
-                    <div className="menu-icon">LOGO</div>
+                    {/* <div className="menu-icon">LOGO</div> */}
+                    <img className="menu-icon" src={logo} alt="logo" />
                     <div className="menu">
                         <ul id="nav-ul" className={this.state.isOpen ? "nav-mobile" : ""}>
                             <Link to="/"><li>Home</li></Link>
