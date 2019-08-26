@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+      <meta name="keywords" content="paying guest, resort, delhi guest services"/>
+      <meta name="description" content="We provide paying guest service to our user as fast as possible near Delhi."/>
+      <meta name="subject" content="Paying Guest Near Delhi">
+      <meta name="copyright"content="Dwarf Company">
+      <meta name="language" content="ES">
+      <meta name="robots" content="index,follow" />
+
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/images/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#FF7043" />
     <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>Paying Guest</title>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
     <div id="root"></div>
-
+    </div>
+   
     <script>
-    if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/offline.js',
-                                    {scope : '/'})
-                                    .then((registration) => {
-                                      console.log('service worker registered');
-                                    })
-    navigator.serviceWorker.ready.then(registration => {
-      // registration.unregister();
-      console.log("service worker ready");
-      
-    });
-  }
-    </script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('worker.js').then(function(registration) {
+              console.log('Worker registration successful', registration.scope);
+            }, function(err) {
+              console.log('Worker registration failed', err);
+            }).catch(function(err) {
+              console.log(err);
+            });
+          });
+        } else {
+          console.log('Service Worker is not supported by browser.');
+        }
+      </script>
 
   </body>
 </html>

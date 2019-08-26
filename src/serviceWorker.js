@@ -129,22 +129,8 @@ function checkValidServiceWorker(swUrl, config) {
 
 export function unregister() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/offline.js',
-                                    {scope : '/'})
-                                    .then((registration) => {
-                                      console.log('service worker registered');
-                                    })
     navigator.serviceWorker.ready.then(registration => {
-      // registration.unregister();
-      console.log("service worker ready");
-      
+      registration.unregister();
     });
   }
 }
-// export function unregister() {
-//   if ('serviceWorker' in navigator) {
-//     navigator.serviceWorker.ready.then(registration => {
-//       registration.unregister();
-//     });
-//   }
-// }
