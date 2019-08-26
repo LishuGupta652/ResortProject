@@ -9,7 +9,6 @@ export default class Navbar extends Component {
     
     handleToggle = () => {
         this.setState({isOpen : !this.state.isOpen})
-        console.log(this.state.isOpen)
     }
 
     render() {
@@ -25,7 +24,8 @@ export default class Navbar extends Component {
                     </div>
 
                     <Link to="/">
-                        <img className="menu-icon" src={logo} alt="logo" />
+                        {/* <img className="menu-icon" src={logo} alt="logo" /> */}
+                        <div className="menu-icon" >LOGO</div>
                     </Link>
                     <div className="menu">
                         <ul id="nav-ul" className={this.state.isOpen ? "nav-mobile" : ""}>

@@ -99,9 +99,6 @@ nav ul li:hover > a{
     }
     .menu-icon{
         float:initial;
-        height: 53px;
-        width: 80px;
-        padding: 3px ;
     }
     nav ul{
         float:none;
